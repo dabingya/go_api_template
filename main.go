@@ -18,13 +18,11 @@ var (
 func main() {
 	pflag.Parse()
 
-	// 初始化日志
 	filePath, _ := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err := config.InitLog(filePath); err != nil {
 		panic(err)
 		return
 	}
-	// 初始化配置，出错退出程序
 	if err := config.InitConfig(*confFileName); err != nil {
 		panic(err)
 		return
@@ -35,7 +33,7 @@ func main() {
 	router.Load(
 		g,
 	)
-	//初始化数据库
+
 	if err := db.InitDB(); err != nil {
 		panic(err)
 		return
