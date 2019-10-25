@@ -1,0 +1,8 @@
+run_mode: debug
+addr: :8088
+name: apiserver
+db:
+  user: username
+  password: password
+  name: db_name
+  addr: address:3306
